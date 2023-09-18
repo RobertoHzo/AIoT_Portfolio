@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "Unit3";
+}
+    <section class="fixed" style="top:0;z-index: 97; box-shadow: 0px -2px 4px lime; border-bottom: 1px solid lime; "></section>
+
+
+<section class="page-title3 page-title section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <h1 class=" text-capitalize mb-0 text-lg text-color3 text_shadows3">UNIT 3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section blog-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <div class="post-content" data-aos="fade-left">
+                        <h4 style=" color: lime; ">MVC architecture</h4>
+                        <p>
+                            MVC (Model, View, Controller) Architecture is the design pattern that is used to build the applications. <hr />
+                            It is used to break up a large application into smaller sections. Each section of the project is designed to illustrate its own function.<hr />
+                            Generally, we know that MVC has 3 components. Model, View, and Controller. But it also has a major component that is equally important to make this framework work in action. And that is Router. So we can say that there is a total of 4 components of MVC. Those are –<br />
+
+                        </p>
+                        <ul>
+                            <li>View – Where the user interacts.</li>
+                            <li>Router – Handles the Request where to process.</li> 
+                            <li>Controller – Process the request and send the response to view.</li>
+                            <li>Model – Middleware that handles the database operations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <div class="post-content" data-aos="fade-left" data-aos-delay="450">
+                        <h4 style=" color: lime; ">Bluetooth module</h4>
+                        <p>
+                            Designed to replace cable connections HC-05 uses serial communication to communicate with the electronics. Usually, it is used to connect small devices like mobile phones using a short-range wireless connection to exchange files. It uses the 2.45GHz frequency band. The transfer rate of the data can vary up to 1Mbps and is in range of 10 meters.
+                            The HC-05 module can be operated within 4-6V of power supply.
+                            <hr />
+                            Descripton of pins
+                            <br />
+                            <ul>
+                                <li>
+                                    Enable - This pin is used to set the Data Mode or and AT command mode (set high).
+                                </li>
+                                <li>
+                                    VCC - This is connected to +5V power supply.
+                                </li>
+                                <li>
+                                    Ground - Connected to ground of powering system.
+                                </li>
+                                <li>
+                                    Tx (Transmitter) - This pin transmits the received data Serially.
+                                </li>
+                                <li>
+                                    Rx (Receiver) - Used for broadcasting data serially over bluetooth.
+                                </li>
+                                <li>
+                                    State -Used to check if the bluetooth is working properly.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <div class="post-content" data-aos="fade-left" data-aos-delay="750">
+                        <h4 style=" color: lime; ">Asp.net</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <div class="post-content" data-aos="fade-left" data-aos-delay="1050">
+                        <h4 style=" color: lime; ">Serial communication</h4>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+</section>
+<section style=" box-shadow: 0px -2px 4px lime; border-bottom: 1px solid lime; "></section>
+
+<script>
+        const colors = ["lime"];
+
+        const numBalls = 70;
+        const balls = [];
+
+        for (let i = 0; i < numBalls; i++) {
+            let ball = document.createElement("div");
+            ball.classList.add("ball");
+            ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+            ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+            ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+            ball.style.transform = `scale(${Math.random()})`;
+            ball.style.width = `7px`;
+            ball.style.height = ball.style.width;
+
+
+            balls.push(ball);
+            document.body.append(ball);
+        }
+
+        // Keyframes
+        balls.forEach((el, i, ra) => {
+            let to = {
+                x: Math.random() * (i % 2 === 0 ? -11 : 11),
+                y: Math.random() * 12
+            };
+
+            let anim = el.animate(
+                [
+                    { transform: "translate(0, 0)" },
+                    { transform: `translate(${to.x}rem, ${to.y}rem)` }
+                ],
+                {
+                    duration: (Math.random() + 1) * 2000, // random duration
+                    direction: "alternate",
+                    fill: "both",
+                    iterations: Infinity,
+                    easing: "ease-in-out"
+                }
+            );
+        });
+</script>
+
+
+

@@ -1,0 +1,140 @@
+﻿@model IEnumerable<IoTApps.Models.Token>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@*<head>
+        <script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>*@
+<section class="page-title1 page-title section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <h1 class="text-capitalize mb-0 text-lg">Token</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section blog-post">
+    <div class="container">
+        <div class="row">
+            <label>Source</label>
+            @Html.DropDownList("Source", new SelectList(ViewBag.Sources, "Id", "Nombre"), new { @class = "form-control" })
+            <br />
+            <br />
+            <label>Token</label>
+            <input type="text" class="form-control" id="Token" />
+            <br />
+            <br />
+            <input type="button" class="btn btn-primary" id="btnSend" value="Send request" />
+
+        </div>
+
+    </div>
+    @*<div class="container">
+            <div class="row">
+                <label>Response</label>
+                <input type="text" class="form-control disabled" id="Response" />
+            </div>
+
+        </div>*@
+    <br />
+    <div class="container table-responsive" style="padding-top:20px;">
+        <div class="row">
+            <table style="width:100%;" id="datatable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Data)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IdSource)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.Tokens)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.Data
+                            </td>
+                            <td>
+                                @item.Fecha
+                            </td>
+                            <td>
+                                @item.IdSource
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+<section style=" box-shadow: 0px -2px 4px #0098ff; border-bottom: 1px solid #007bff; "></section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#btnSend').click(function () {
+            var src = $('#Source').val();
+            var token = $('#Token').val();
+            $.ajax({
+                type: 'GET',
+                url: 'Add?source=' + src + '&data=' + token,
+                error: function () {
+                    //$('#Response').val('Request error!!!');
+                    Swal.fire({
+                        titleText: 'Request error!!!',
+                        confirmButtonText: 'Ok',
+                        color: 'white',
+                        border: '1px solid'
+
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.reload();
+                        }
+                    })
+                },
+                success: function (d) {
+                    //$('#Response').val(d);
+                    $('#Token').val('');
+                    Swal.fire({
+                        titleText:d,
+                        confirmButtonText: 'Ok',
+                        color: 'white',
+                        border:'1px solid'
+
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.reload();
+                        }
+                    })
+                    
+                }
+            });
+
+        })
+    });
+</script>
+
+

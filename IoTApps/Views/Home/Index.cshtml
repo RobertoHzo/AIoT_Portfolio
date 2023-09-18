@@ -1,0 +1,290 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<section class="fixed" style="z-index: 97; top: 0; border-bottom: 1px solid #000000ba; "></section>
+
+
+<!-- Banner Start -->
+<div style="">
+    <section class="section banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="display:flex;justify-content:center;">
+                    <h1 class="cd-headline clip is-full-width">
+                        Roberto <br>
+                        <span class="cd-words-wrapper text-color">
+                            <b class="is-visible">Portfolio</b>
+                            <b>AIoT</b>
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner End -->
+    <!-- POrtfolio start -->
+    <section class="portfolio ">
+        <div class="container">
+            <div class="row mb-5">
+
+            </div>
+
+            <div class="row shuffle-wrapper portfolio-gallery">
+                <div style="padding-top:2px;padding-bottom:2px;" class="col-lg-4 col-12 mb-4 shuffle-item gradient-border" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
+                    <div class="position-relative inner-box">
+                        <div class="image position-relative ">
+                            <img style="height:340px;" src="~/images/foto1.jpg" alt="portfolio-image" class="img-fluid w-100 d-block">
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <a class="overlay-content" href="@Url.Action("Unit1", "Home")">
+                                        <h5 class="mb-0" style="color:red;">Unit 1</h5>
+                                        <p>visit</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-top:2px;padding-bottom:2px;" class="col-lg-4 col-12 mb-4 shuffle-item gradient-border" data-groups="[&quot;branding&quot;]">
+                    <div class="position-relative inner-box ">
+                        <div class="image position-relative ">
+                            <img style="height:340px;" src="~/images/3.jpg" alt="portfolio-image" class="img-fluid w-100 d-block ">
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <a class="overlay-content" href="@Url.Action("Unit2", "Home")">
+                                        <h5 class="mb-0" style="color:red;">Unit 2</h5>
+                                        <p>visit</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-top:2px;padding-bottom:2px;" class="col-lg-4 col-12 mb-4 shuffle-item gradient-border" data-groups="[&quot;illustration&quot;]">
+                    <div class="position-relative inner-box">
+                        <div class="image position-relative ">
+                            <img style="height:340px;" src="~/images/1.jpg" alt="portfolio-image" class="img-fluid w-100 d-block">
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <a class="overlay-content" href="@Url.Action("Unit3", "Home")">
+                                        <h5 class="mb-0" style="color:red;">Unit 3 </h5>
+                                        <p>visit</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Portfolio End -->
+<!-- Service start -->
+<section class="section service-home" style="box-shadow: 1px 1px 25px red; background-color:black;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="mb-2 ">Unit Contents</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="service-item mb-5" data-aos="fade-left">                  
+                    <span class="material-symbols-outlined">
+                        sensors
+                    </span>
+                    <h4 class="my-3" style="color:red;">Unit 1</h4>
+                    <ul>
+                        <li>Practice with analog sensors.</li>
+                        <li>Practice with digital sensors.</li>
+                        <li>Practice with actuators.</li>
+                        <li><b>Storing data in a database with open hardware.</b></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item mb-5" data-aos="fade-left" data-aos-delay="450">
+                    <span class="material-symbols-outlined">
+                        sd_card
+                    </span>
+                    <h4 class="my-3" style="color:red;">Unit 2</h4>
+                    <ul>
+                        <li>Serial communication on open hardware.</li>
+                        <li>Bluetooth on open hardware.</li>
+                        <li>Implementation of GSM on open hardware.</li>
+                        <li><b>Implementation of communication methods in open hardware.</b></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="750">
+                    <span class="material-symbols-outlined">
+                        integration_instructions
+                    </span>
+                    <h4 class="my-3" style="color:red;">Unit 3</h4>
+                    <ul>
+                        <li>Documentation of the process of elaboration of graphic interfaces for monitoring and control using open hardware.</li>
+                        <li><b>Development of graphical interfaces for monitoring using open hardware.</b></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- service end -->
+<script>
+    const colors = ["red"];
+
+    const numBalls = 100;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+        let ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+        ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+        ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+        ball.style.transform = `scale(${Math.random()})`;
+        ball.style.width = `7px`;
+        ball.style.height = ball.style.width;
+
+
+        balls.push(ball);
+        document.body.append(ball);
+    }
+
+    // Keyframes
+    balls.forEach((el, i, ra) => {
+        let to = {
+            x: Math.random() * (i % 2 === 0 ? -11 : 11),
+            y: Math.random() * 12
+        };
+
+        let anim = el.animate(
+            [
+                { transform: "translate(0, 0)" },
+                { transform: `translate(${to.x}rem, ${to.y}rem)` }
+            ],
+            {
+                duration: (Math.random() + 1) * 2000, // random duration
+                direction: "alternate",
+                fill: "both",
+                iterations: Infinity,
+                easing: "ease-in-out"
+            }
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/images/foto1.jpg" alt="..." style="width: 100%; object-fit: cover; height: 300px;" class="img-responsive">
+
+            </div>
+            <div class="item">
+                <img src="~/images/foto2.jpg" alt="..." style="width: 100%; object-fit: cover; height: 300px;" class="img-responsive">
+
+            </div>
+            <div class="item">
+                <img src="~/images/foto1.jpg" alt="..." style="width: 100%; object-fit: cover; height: 300px;" class="img-responsive">
+
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    <br />
+
+
+    <div>
+        <div class="row">
+
+            <div class="col-md-4">
+                <h2>UNIT 1</h2>
+
+                <ul>
+                    <li>Practica con sensores analogicos</li>
+                    <li>Practica con sensores digitales</li>
+                    <li>Practica con actuadores</li>
+                    <li><b>Almacenamiento de datos en una base de datos con hardware abierto</b></li>
+
+
+                </ul>
+                <a class="btn btn-warning">sssss</a>
+            </div>
+
+            <div class="col-md-4">
+                <h2>UNIT 2</h2>
+                <ul>
+                    <li>Comunicacion serial en hardware abierto</li>
+                    <li>Bluetooth en hardware abierto</li>
+                    <li>Imolementacion de GSM en hardware abierto</li>
+                    <li><b>Implementacion de metodos de comunicacion en hardware abierto</b></li>
+                    <a class="btn btn-warning">sssss</a>
+
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h2>UNIT 3</h2>
+                <ul>
+                    <li>Documentacion del proceso de elaboracion de interfaces graficas para el monitoreo y control mediante hardware abierto</li>
+                    <li><b>Desarrollo de interfaces graficas para el monitoreo mediante harware abierto</b></li>
+                    <a href="/Unit3" class="btn btn-warning">sssss</a>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>*@
+
+

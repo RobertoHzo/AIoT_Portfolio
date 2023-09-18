@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Unit2";
+}
+<section class="fixed" style="z-index:97;top:0; box-shadow: 0px -2px 4px #ffd800; border-bottom: 1px solid #ffd800; "></section>
+
+
+<section class="page-title2 page-title section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <h1 class="text-capitalize mb-0 text-lg text-color2 text_shadows2">UNIT 2</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section blog-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <a class="image-content" href="@Url.Action("Act1U2", "Home")">
+                        <img src="~/images/Act1U2.jpeg" alt="" class="img-fluid">
+                    </a>
+
+                    <div class="post-content">
+                        <span class="date text-uppercase text-sm">June 2022</span>
+                        <a href="@Url.Action("Act1U2", "Home")"><h4 style=" color: #ffd800; ">Serial communication on open hardware</h4></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <a class="image-content" href="@Url.Action("Act2U2", "Home")">
+                        <img src="~/images/Act2U2.png" alt="" class="img-fluid">
+                    </a>
+
+                    <div class="post-content">
+                        <span class="date text-uppercase text-sm">June 2022</span>
+
+                        <a href="@Url.Action("Act2U2", "Home")"><h4 style=" color: #ffd800; ">Bluetooth on open hardware</h4></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5">
+                    <a class="image-content" href="@Url.Action("Act3U2", "Home")">
+                        <img src="~/images/Act3U2.png" alt="" class="img-fluid">
+                    </a>
+
+                    <div class="post-content">
+                        <span class="date text-uppercase text-sm">June 2022</span>
+
+                        <a href="@Url.Action("Act3U2", "Home")"><h4 style=" color: #ffd800; ">Implementation of GSM on open hardware</h4></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="post mb-5 mb-lg-0">
+                    <a class="image-content" href="@Url.Action("RaU2", "Home")">
+                        <img src="~/images/Act3U2.png" alt="" class="img-fluid">
+                    </a>
+
+                    <div class="post-content">
+                        <span class="date text-uppercase text-sm">June 2022</span>
+
+                        <a href="@Url.Action("RaU2", "Home")"><h4 style=" color: #ffd800; ">Implementation of communication methods in open hardware</h4></a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+<section style=" box-shadow: 0px -2px 4px #ffd800; border-bottom: 1px solid #ffd800; "></section>
+
+<script>
+        const colors = ["yellow"];
+
+        const numBalls = 70;
+        const balls = [];
+
+        for (let i = 0; i < numBalls; i++) {
+            let ball = document.createElement("div");
+            ball.classList.add("ball");
+            ball.style.background = colors[0];
+            ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+            ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+            ball.style.transform = `scale(${Math.random()})`;
+            ball.style.width = `7px`;
+            ball.style.height = ball.style.width;
+
+
+            balls.push(ball);
+            document.body.append(ball);
+        }
+
+        // Keyframes
+        balls.forEach((el, i, ra) => {
+            let to = {
+                x: Math.random() * (i % 2 === 0 ? -11 : 11),
+                y: Math.random() * 12
+            };
+
+            let anim = el.animate(
+                [
+                    { transform: "translate(0, 0)" },
+                    { transform: `translate(${to.x}rem, ${to.y}rem)` }
+                ],
+                {
+                    duration: (Math.random() + 1) * 2000, // random duration
+                    direction: "alternate",
+                    fill: "both",
+                    iterations: Infinity,
+                    easing: "ease-in-out"
+                }
+            );
+        });
+</script>
+
